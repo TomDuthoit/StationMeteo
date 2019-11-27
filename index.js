@@ -39,9 +39,6 @@ var server = http.createServer(function (req, res) {
       if ('find' in params) {
         findInBDD();
       }
-      if ('chart' in params) {
-        sendChart();
-      }
       if ('erase' in params) {
         eraseInBDD();
       }
@@ -70,14 +67,6 @@ var server = http.createServer(function (req, res) {
       }
       res.write(JSON.stringify(devices));
       res.end();
-    }
-    function sendChart() {
-      res.writeHead(200, {
-        'Content-Type': 'text/html'
-      });
-      res.write(displayFile, function () {
-        res.end();
-      })
     }
     function insertInBDD(newObj) {
       var date =  Date.now()/1000;
