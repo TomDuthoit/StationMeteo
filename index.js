@@ -3,7 +3,6 @@ const url = require('url'); //pour les URL
 const querystring = require('querystring');
 const MongoClient = require("mongodb").MongoClient;
 const fs = require('fs');
-const displayFile = fs.readFileSync("display.html");
 
 var server = http.createServer(function (req, res) {
 
